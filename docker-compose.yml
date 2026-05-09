@@ -1,0 +1,28 @@
+services:
+  db:
+    image: mysql:8.0
+    container_name: tech_db
+
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: dictionary_app
+      MYSQL_USER: appuser
+      MYSQL_PASSWORD: apppass
+
+    volumes:
+      - db_data:/var/lib/mysql
+      - ./database/database.sql:/docker-entrypoint-initdb.d/database.sql:ro
+
+  web:
+    build: .
+    container_name: tech_web
+
+    ports:
+      - "8085:80"
+
+    depends_on:
+      - db
+
+volumes:
+  db_data:
+  

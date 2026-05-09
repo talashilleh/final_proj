@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Tech Term Explainer</title>
+</head>
+<body>
+
+    <h1>Tech Term Explainer</h1>
+
+    <input type="text" id="word" placeholder="Enter term">
+    <button onclick="getInfo()">Explain</button>
+
+    <div id="result"></div>
+
+    <script>
+
+        function getInfo() {
+
+            let word = document.getElementById("word").value;
+
+            fetch("info.php?word=" + word)
+
+            .then(response => response.text())
+
+            .then(data => {
+
+                document.getElementById("result").innerHTML = data;
+
+            });
+
+        }
+
+    </script>
+
+</body>
+</html>
