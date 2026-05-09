@@ -10,12 +10,13 @@ pipeline {
             }
         }
 
-        stage('Build Containers') {
-            steps {
-                sh 'docker compose down'
-                sh 'docker compose up --build -d'
-            }
-        }
+       stage('Build Containers') {
+    steps {
+        sh 'docker compose down'
+        sh 'docker compose build --no-cache'
+        sh 'docker compose up -d'
+    }
+}
 
         stage('Show Running Containers') {
             steps {
