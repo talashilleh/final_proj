@@ -1,75 +1,180 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tech Term Explainer</title>
 
     <style>
 
-        body {
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+        }
+
+        body{
             font-family: Arial, sans-serif;
-            background: #f4f7fb;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
+            height:100vh;
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            background: linear-gradient(135deg, #0f172a, #1e293b, #2563eb);
+            overflow:hidden;
         }
 
-        .container {
-            background: white;
-            padding: 40px;
-            border-radius: 15px;
-            box-shadow: 0 0 20px rgba(0,0,0,0.1);
-            width: 400px;
-            text-align: center;
+        .container{
+            width:420px;
+            background: rgba(255,255,255,0.12);
+            backdrop-filter: blur(15px);
+            padding:45px;
+            border-radius:25px;
+            text-align:center;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+            border:1px solid rgba(255,255,255,0.2);
+            animation: fadeIn 1s ease;
         }
 
-        h1 {
-            color: #333;
-            margin-bottom: 25px;
+        @keyframes fadeIn{
+            from{
+                opacity:0;
+                transform:translateY(20px);
+            }
+
+            to{
+                opacity:1;
+                transform:translateY(0);
+            }
         }
 
-        input {
-            width: 70%;
-            padding: 10px;
-            border: 1px solid #ccc;
-            border-radius: 8px;
-            font-size: 16px;
+        .logo{
+            font-size:60px;
+            margin-bottom:15px;
         }
 
-        button {
-            padding: 10px 18px;
-            border: none;
-            background: #007bff;
-            color: white;
-            border-radius: 8px;
-            font-size: 16px;
-            cursor: pointer;
+        h1{
+            color:white;
+            margin-bottom:10px;
+            font-size:32px;
         }
 
-        button:hover {
-            background: #0056b3;
+        p{
+            color:#dbeafe;
+            margin-bottom:30px;
+            font-size:15px;
+        }
+
+        .search-box{
+            display:flex;
+            gap:10px;
+        }
+
+        input{
+            flex:1;
+            padding:14px;
+            border:none;
+            border-radius:12px;
+            font-size:16px;
+            outline:none;
+            background:white;
+        }
+
+        button{
+            padding:14px 20px;
+            border:none;
+            border-radius:12px;
+            background:#3b82f6;
+            color:white;
+            font-size:16px;
+            cursor:pointer;
+            transition:0.3s;
+            font-weight:bold;
+        }
+
+        button:hover{
+            background:#2563eb;
+            transform:scale(1.05);
+        }
+
+        .examples{
+            margin-top:25px;
+            color:white;
+            font-size:14px;
+        }
+
+        .tags{
+            margin-top:12px;
+            display:flex;
+            justify-content:center;
+            flex-wrap:wrap;
+            gap:10px;
+        }
+
+        .tag{
+            background:rgba(255,255,255,0.18);
+            padding:8px 14px;
+            border-radius:20px;
+            color:white;
+            font-size:13px;
+            transition:0.3s;
+        }
+
+        .tag:hover{
+            background:white;
+            color:#2563eb;
+            cursor:pointer;
         }
 
     </style>
-
 </head>
 
 <body>
 
-<div class="container">
+    <div class="container">
 
-    <h1>Tech Term Explainer</h1>
+        <div class="logo">💻</div>
 
-    <form action="info.php" method="GET">
+        <h1>Tech Term Explainer</h1>
 
-        <input type="text" name="word" placeholder="Enter tech term">
+        <p>
+            Search for programming and technology terms instantly
+        </p>
 
-        <button type="submit">Explain</button>
+        <form action="info.php" method="GET">
 
-    </form>
+            <div class="search-box">
 
-</div>
+                <input 
+                    type="text" 
+                    name="word" 
+                    placeholder="Search tech term..."
+                    required
+                >
+
+                <button type="submit">
+                    Explain
+                </button>
+
+            </div>
+
+        </form>
+
+        <div class="examples">
+
+            Popular Searches
+
+            <div class="tags">
+
+                <div class="tag">Git</div>
+                <div class="tag">Docker</div>
+                <div class="tag">Linux</div>
+                <div class="tag">CI/CD</div>
+
+            </div>
+
+        </div>
+
+    </div>
 
 </body>
 </html>
