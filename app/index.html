@@ -2,39 +2,74 @@
 <html>
 <head>
     <title>Tech Term Explainer</title>
+
+    <style>
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f7fb;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            background: white;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+            width: 400px;
+            text-align: center;
+        }
+
+        h1 {
+            color: #333;
+            margin-bottom: 25px;
+        }
+
+        input {
+            width: 70%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            font-size: 16px;
+        }
+
+        button {
+            padding: 10px 18px;
+            border: none;
+            background: #007bff;
+            color: white;
+            border-radius: 8px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #0056b3;
+        }
+
+    </style>
+
 </head>
 
 <body>
+
+<div class="container">
+
     <h1>Tech Term Explainer</h1>
-<script>
-setTimeout(() => {
-    location.reload();
-}, 200000);
-</script>
-    <input type="text" id="word" placeholder="Enter term">
-    <button onclick="getInfo()">Explain</button>
 
-    <div id="result"></div>
+    <form action="info.php" method="GET">
 
-    <script>
+        <input type="text" name="word" placeholder="Enter tech term">
 
-        function getInfo() {
+        <button type="submit">Explain</button>
 
-            let word = document.getElementById("word").value;
+    </form>
 
-            fetch("info.php?word=" + word)
-
-            .then(response => response.text())
-
-            .then(data => {
-
-                document.getElementById("result").innerHTML = data;
-
-            });
-
-        }
-
-    </script>
+</div>
 
 </body>
 </html>
