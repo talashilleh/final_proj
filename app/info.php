@@ -1,6 +1,6 @@
 <?php
 
-$conn = new mysqli("db", "root", "root", "techdb");
+$conn = new mysqli("db", "appuser", "apppass", "dictionary_app");
 
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
