@@ -8,9 +8,15 @@ if ($conn->connect_error) {
 
 $word = $_GET['word'];
 
-$sql = "SELECT definition FROM terms WHERE word='$word'";
+$stmt = $conn->prepare(
+    "SELECT definition FROM terms WHERE word = ?"
+);
 
-$result = $conn->query($sql);
+$stmt->bind_param("s", $word);
+
+$stmt->execute();
+
+$result = $stmt->get_result();
 
 ?>
 
