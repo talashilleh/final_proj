@@ -38,16 +38,16 @@ GitHub
 ## Screenshots
 
 ### Home Page
-
 ![Home Page](screenshots/home-page.png)
 
 ### Search Result
-
 ![Search Result](screenshots/search-result.png)
 
-### Docker Containers Running
+### Jenkins Pipeline Success
+![Jenkins Pipeline](screenshots/jenkins-success.png)
 
-![Docker Containers](screenshots/docker-containers.png)
+### Running Docker Containers on Linux
+![Docker Containers](screenshots/docker-linux.png)
 
 ## Learning Outcomes
 
