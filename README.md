@@ -34,6 +34,21 @@ GitHub
 * Automated build pipeline using Jenkins
 * Containerized application environment
 
+
+## Screenshots
+
+### Home Page
+
+![Home Page](screenshots/home-page.png)
+
+### Search Result
+
+![Search Result](screenshots/search-result.png)
+
+### Docker Containers Running
+
+![Docker Containers](screenshots/docker-containers.png)
+
 ## Learning Outcomes
 
 Through this project, we gained practical experience in:
