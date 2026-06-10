@@ -75,6 +75,16 @@ After the containers start successfully, open:
 
 http://localhost:8085
 
+## CI/CD Workflow
+
+1. Developers push code changes to GitHub.
+2. Jenkins automatically pulls the latest version of the repository.
+3. Docker Compose rebuilds the application containers.
+4. Updated containers are deployed automatically.
+5. Jenkins verifies the running services using Docker commands.
+
+This workflow demonstrates a basic Continuous Integration and Continuous Deployment (CI/CD) process using Jenkins and Docker.
+
 ## Future Improvements
 
 * Improve application security

@@ -17,6 +17,12 @@ services:
     build: .
     container_name: tech_web
 
+    environment:
+      DB_HOST: db
+      DB_NAME: dictionary_app
+      DB_USER: appuser
+      DB_PASSWORD: apppass
+
     ports:
       - "8085:80"
 
@@ -25,4 +31,3 @@ services:
 
 volumes:
   db_data:
-  
